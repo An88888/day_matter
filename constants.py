@@ -1,0 +1,7 @@
+# 成功
+RESULT_SUCCESS = 200
+# 失败
+RESULT_FAIL = 0
+
+#  身份失效
+UNAUTHORIZED = 1019
