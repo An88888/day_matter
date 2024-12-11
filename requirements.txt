@@ -3,27 +3,20 @@ amqp==5.3.1
 APScheduler==3.11.0
 async-timeout==5.0.1
 billiard==4.2.1
-blinker @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_006wdibaig/croot/blinker_1696539075381/work
 celery==5.4.0
 certifi==2024.8.30
 charset-normalizer==3.4.0
-click @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_f27dk3zwrb/croot/click_1698129816363/work
 click-didyoumean==0.3.1
 click-plugins==1.1.1
 click-repl==0.3.0
-Flask @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_0bn8z9nupr/croot/flask_1716545880759/work
 Flask-Cors==5.0.0
 Flask-Migrate==4.0.7
 flask-redis==0.4.0
 Flask-SQLAlchemy==3.1.1
 greenlet==3.1.1
 idna==3.10
-importlib_metadata @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_3e5enqet8m/croot/importlib_metadata-suite_1732633497061/work
-itsdangerous @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_f7bt4rtvu8/croot/itsdangerous_1716533350521/work
-Jinja2 @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_8dveqartkv/croot/jinja2_1730902844110/work
 kombu==5.4.2
 Mako==1.3.6
-MarkupSafe @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3a_cffw83x/croot/markupsafe_1704205995714/work
 prompt_toolkit==3.0.48
 PyMySQL==1.1.1
 python-dateutil==2.9.0.post0
@@ -38,5 +31,3 @@ tzlocal==5.2
 urllib3==2.2.3
 vine==5.1.0
 wcwidth==0.2.13
-Werkzeug @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_34hd27z78h/croot/werkzeug_1731005772104/work
-zipp @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_d1md1mr9su/croot/zipp_1732630765619/work

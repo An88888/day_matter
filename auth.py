@@ -47,3 +47,25 @@ def login():
         }
     }
 
+
+@auth_bp.route('/logout', methods=['POST'])
+@response_format
+def logout():
+    # 从请求中获取 token
+    data = request.get_json()
+    token = data.get('token')
+
+    if not token:
+        return {"code": constants.RESULT_FAIL, "message": "未提供 token"}
+
+    # 从 Redis 中删除 token
+    redis_client.delete(token)
+
+    # 可选：从缓存中删除用户信息
+    user_id = token.split(":")[-1]  # 提取用户 ID
+    cache.delete(str(user_id))
+
+    return {
+        "code": constants.RESULT_SUCCESS,
+        "message": "登出成功"
+    }
