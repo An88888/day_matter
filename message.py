@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, current_app
 import constants
 from decorators import login_required, response_format, admin_required
 from models import User, Food
@@ -38,12 +38,11 @@ def msg_send():
 # @msg_bp.route('/msg/all', methods=['POST'])
 # @login_required
 # @admin_required
-@response_format
+# @response_format
 def msg_send_all():
     try:
         # 获取所有食物和其对应的食材信息
         message = ''  # 初始化消息字符串
-
         foods_name = get_today_food()
         if foods_name and isinstance(foods_name,list) and len(foods_name) > 0:
             pass
@@ -76,6 +75,8 @@ def msg_send_all():
             return {"code": constants.RESULT_FAIL, "message": "用户不存在"}
 
     except Exception as e:
+        logger.error("========msg_send_all_error")
+        logger.error(e)
         return {"code": constants.RESULT_FAIL, "message": str(e)}
 
 

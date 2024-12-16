@@ -31,3 +31,9 @@ tzlocal==5.2
 urllib3==2.2.3
 vine==5.1.0
 wcwidth==0.2.13
+
+flask~=3.0.3
+werkzeug~=3.0.6
+beautifulsoup4~=4.12.3
+fake-useragent~=2.0.0
+cryptography== 43.0.3
