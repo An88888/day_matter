@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from flask_migrate import Migrate
 import os
 from crontab import crontab_bp
-from extensions import init_celery
 from interval import interval_bp
 from models import db
 from flask_cors import CORS
@@ -44,10 +43,10 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Configure Redis connection
-    redis_host = os.getenv('REDIS_HOST', '127.0.0.1')
-    redis_port = os.getenv('REDIS_PORT', 6379)
-    # redis_password = os.getenv('REDIS_PASSWORD', 'redis_DbhdZH')
-    app.config['REDIS_URL'] = f'redis://{redis_host}:{redis_port}/0'
+    redis_host = os.getenv('REDIS_HOST')
+    redis_port = os.getenv('REDIS_PORT')
+    redis_password = os.getenv('REDIS_PASSWORD')
+    app.config['REDIS_URL'] = f'redis://:{redis_password}@{redis_host}:{redis_port}/0'
 
     # app.config['CELERY_BROKER_URL'] = f'redis://{redis_password}@{redis_host}:{redis_port}/0'
     # app.config['CELERY_RESULT_BACKEND'] = f'redis://{redis_password}@{redis_host}:{redis_port}/0'
@@ -94,7 +93,7 @@ def create_app():
         with app.app_context():
             msg_send_all()
 
-    scheduler.add_job(scheduled_task, 'cron', hour=18, minute=00)
+    scheduler.add_job(scheduled_task, 'cron', hour=14, minute=5)
 
     # 启动调度器
     scheduler.start()
@@ -109,5 +108,5 @@ BASE_DIR = app.root_path
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
